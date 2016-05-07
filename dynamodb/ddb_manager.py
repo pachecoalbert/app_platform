@@ -74,7 +74,7 @@ if __name__ == "__main__":
     global env
     env = 'local'
 
-    event={'event_id': 'delete',
+    event={'event_id': 'write',
            'event': {
                 'id': '03',
                 'name': 'Mary Ferry',

@@ -34,10 +34,7 @@ def lambda_handler(event, context):
     table = dynamodb.Table('myapps')
     try:
         response = table.get_item(
-            Key={
-                'id': '02',
-                'name': 'Jeff Lee'
-            }
+            Key=event
         )
     except:
         error={'ErrorID': '-1', 'Error':'Key NOT found'}
@@ -77,6 +74,12 @@ if __name__ == "__main__":
     global env
     env = 'local'
 
-    lambda_handler("test", "test")
+    event = {
+        'id': '01',
+        'name': 'Al Pacheco',
+    }
+
+
+    lambda_handler(event, "test")
 else:
     print("Not running __mina__")
